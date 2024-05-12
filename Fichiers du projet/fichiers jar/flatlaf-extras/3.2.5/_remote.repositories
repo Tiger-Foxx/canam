@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Nov 11 07:49:15 WAT 2023
+flatlaf-extras-3.2.5.jar>=
+flatlaf-extras-3.2.5.jar>central=
+flatlaf-extras-3.2.5.pom>central=

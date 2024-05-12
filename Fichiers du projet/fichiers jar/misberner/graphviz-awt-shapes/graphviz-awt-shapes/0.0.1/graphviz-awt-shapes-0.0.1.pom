@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<!--
+ Copyright (c) 2013, Malte Isberner
+ All rights reserved.
+
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+
+ 1. Redistributions of source code must retain the above copyright notice, this
+    list of conditions and the following disclaimer.
+
+ 2. Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+
+	<groupId>com.github.misberner.graphviz-awt-shapes</groupId>
+	<artifactId>graphviz-awt-shapes</artifactId>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
+
+
+	<name>GraphVIZ AWT Shapes</name>
+	<description>
+		AWT Shape Definitions for Shapes used by GraphVIZ.
+	</description>
+	<url>https://github.com/misberner/graphviz-awt-shapes</url>
+	<inceptionYear>2013</inceptionYear>
+
+	<licenses>
+		<license>
+			<name>The BSD License</name>
+			<url>http://opensource.org/licenses/bsd-license.html</url>
+		</license>
+	</licenses>
+
+
+	<developers>
+		<developer>
+			<id>misberner</id>
+			<name>Malte Isberner</name>
+			<email>malte.isberner@gmail.com</email>
+			<properties>
+				<picUrl>
+					http://www.gravatar.com/avatar/c44dc4164f1a9a597ec0c24425d1b89d.png				
+				</picUrl>
+			</properties>
+		</developer>
+	</developers>
+
+	<issueManagement>
+		<url>https://github.com/misberner/graphviz-awt-shapes/issues</url>
+		<system>GitHub Issues</system>
+	</issueManagement>
+
+	<!--  =============================== SCM =======================  -->
+	<scm>
+		<connection>scm:git:git@github.com:misberner/graphviz-awt-shapes.git</connection>
+		<developerConnection>scm:git:git@github.com:misberner/graphviz-awt-shapes.git</developerConnection>
+		<url>https://github.com/misberner/graphviz-awt-shapes/tree/master</url>
+	</scm>
+
+	<properties>
+		<!-- Plugin versions -->
+		<compiler-plugin.version>3.1</compiler-plugin.version>
+		<!-- Dependency versions -->
+		<guava.version>18.0</guava.version>
+	</properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${compiler-plugin.version}</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<reportSets>
+					<reportSet>
+						<id>default</id>
+						<reports>
+							<report>javadoc</report>
+							<report>test-javadoc</report>
+						</reports>
+					</reportSet>
+					<reportSet>
+						<id>aggregate</id>
+						<reports>
+							<report>aggregate</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
+
+	<distributionManagement>
+		<!-- Dummy - this will NOT actually be used, but is required for mvn site:stage -->
+		<!-- Use build-tools/deploy-site.sh for site deployment on GitHub pages -->
+		<site>
+			<id>local</id>
+			<url>file://${user.home}/maven-sites/${project.groupId}-site</url>
+		</site>
+	</distributionManagement>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+	</dependencies>
+</project>
